@@ -1,4 +1,4 @@
 ﻿# webpengumuman
-# website ini dibuat untuk memberikan kesan kelulusan yang dramatis kepada siswa & siswi SMA GEMA 45 SURABAYA
-# building code menggunakan bantuan canva AI 
+website ini dibuat untuk memberikan kesan kelulusan yang dramatis kepada siswa & siswi SMA GEMA 45 SURABAYA.
+building code menggunakan bantuan canva AI 
 2025
