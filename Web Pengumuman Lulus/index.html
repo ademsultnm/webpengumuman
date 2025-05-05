@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="id">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pengumuman Kelulusan SMA GEMA 45 SURABAYA</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="styles.css">
+   </head>
+
+
+   <body class="min-h-screen">
+      <div class="confetti-container"></div>
+      
+      <header class="bg-blue-800 text-white py-4 shadow-md">
+         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-4 md:mb-0">
+                  <div class="mr-4">
+                     <a href="/">
+                        <img src="/icon/logo_gema.ico" alt="Logo Gema" class="h-10 w-auto" />
+                     </a>
+                  </div>
+                  <div>
+                     <h1 class="text-xl md:text-2xl font-bold">SMA GEMA 45 SURABAYA</h1>
+                     <p class="text-sm md:text-base">Pengumuman Kelulusan Tahun Ajaran 2024/2025</p>
+                  </div>
+            </div>
+            <div class="text-center md:text-right">
+                  <p class="text-sm">Jl. Mayjend Sungkono, No. 106, Surabaya</p>
+                  <p class="text-sm">Telp: (031) 5621570</p>
+            </div>
+         </div>
+      </header>
+
+      <main class="container mx-auto px-4 py-8">
+         <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-center text-blue-800 mb-6">Cek Status Kelulusan</h2>
+            
+            <div class="mb-8">
+                  <p class="text-gray-700 mb-4 text-center">Masukkan Nomor Induk Siswa (NIS) untuk melihat hasil kelulusan:</p>
+                  
+                  <div class="flex flex-col md:flex-row justify-center gap-4">
+                     <input type="text" id="nisInput" placeholder="Masukkan NIS" class="border border-gray-300 rounded-md px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                     <button id="checkButton" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition duration-300">Cek Hasil</button>
+                  </div>
+            </div>
+            
+            <div id="resultContainer" class="hidden">
+                  <div class="border-t border-b border-gray-200 py-6 mb-6">
+                     <div class="result-appear">
+                        <div id="studentInfo" class="mb-6">
+                              <table class="w-full">
+                                 <tr>
+                                    <td class="py-2 font-semibold w-1/4">NIS</td>
+                                    <td class="py-2">: <span id="resultNis"></span></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="py-2 font-semibold">Nama</td>
+                                    <td class="py-2">: <span id="resultNama"></span></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="py-2 font-semibold">Kelas</td>
+                                    <td class="py-2">: <span id="resultKelas"></span></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="py-2 font-semibold">Status</td>
+                                    <td class="py-2">: <span id="resultStatus" class="font-bold"></span></td>
+                                 </tr>
+                              </table>
+                        </div>
+                        
+                        <div id="congratsMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md mb-4">
+                              <div class="flex justify-between items-center">
+                                 <div>
+                                    <p class="font-bold">Selamat!</p>
+                                    <p>Anda dinyatakan LULUS dari SMA GEMA 45 SURABAYA.</p>
+                                 </div>
+                                 <div class="text-4xl">🎓</div>
+                              </div>
+                        </div>
+                        
+                        <div id="failMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md mb-4">
+                              <div class="flex justify-between items-center">
+                                 <div>
+                                    <p class="font-bold">Mohon Maaf</p>
+                                    <p>Anda dinyatakan TIDAK LULUS dari SMA GEMA 45 SURABAYA.</p>
+                                    <p class="mt-2">Silakan hubungi wali kelas untuk informasi lebih lanjut.</p>
+                                 </div>
+                                 <div class="text-4xl">📝</div>
+                              </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="text-center">
+                     <button id="checkAnotherButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md transition duration-300">Cek Siswa Lain</button>
+                  </div>
+            </div>
+            
+            <div id="notFoundMessage" class="hidden bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-md">
+                  <p class="font-bold">Data Tidak Ditemukan</p>
+                  <p>NIS yang Anda masukkan tidak terdaftar. Silakan periksa kembali NIS Anda.</p>
+            </div>
+         </div>
+         
+         <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold text-center text-blue-800 mb-4">Informasi Kelulusan</h2>
+            
+            <div class="space-y-4 text-gray-700">
+                  <div>
+                     <h3 class="font-semibold text-lg">Siswa yang Lulus:</h3>
+                     <ul class="list-disc pl-5 mt-2">
+                        <li>Telah menyelesaikan seluruh program pembelajaran</li>
+                        <li>Memperoleh nilai minimal baik pada penilaian akhir untuk seluruh mata pelajaran</li>
+                        <li>Lulus ujian sekolah dan ujian nasional</li>
+                     </ul>
+                  </div>
+                  
+                  <div class="bg-blue-50 p-4 rounded-md">
+                     <h3 class="font-semibold text-lg text-blue-800">Pengambilan Ijazah:</h3>
+                     <p class="mt-2">Pengambilan ijazah dapat dilakukan dengan ketentuan:</p>
+                     <ul class="list-disc pl-5 mt-2">
+                        <li>Sudah melunasi tunggakan SPP sampai pada bulan terakhir kelulusan</li>
+                        <li class="mt-2">Waktu pengambilan dilakukan di:
+                              <ul class="list-disc pl-5 mt-1">
+                                 <li>Hari: Senin - Jumat</li>
+                                 <li>Waktu: 08.00 - 13.00 WIB</li>
+                                 <li>Lokasi: R. Tata Usaha SMA GEMA 45</li>
+                              </ul>
+                        </li>
+                        <li class="mt-2">Membawa pulpen pribadi</li>
+                        <li>Penerbitan SKL untuk keperluan kerja dll, diperbolehkan</li>
+                        <li>Pengambilan diluar jam yang tertera, diarahkan untuk kembali lagi esok hari</li>
+                     </ul>
+                  </div>
+                  
+                  <div class="bg-yellow-50 p-4 rounded-md">
+                     <h3 class="font-semibold text-lg text-yellow-800">Informasi Lebih Lanjut:</h3>
+                     <p class="mt-2">Untuk informasi lebih lanjut, silakan hubungi:</p>
+                     <p class="mt-1">Telp: (031) 5621570</p>
+                     <p>Email: info@smagema45sby.sch.id</p>
+                  </div>
+            </div>
+         </div>
+      </main>
+      
+      <footer class="bg-gray-800 text-white py-6 mt-8">
+         <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 SMA GEMA 45 SURABAYA. Hak Cipta Dilindungi.</p>
+            <p class="text-sm mt-2">Jl. Mayjend Sungkono, No. 106, Surabaya | Telp: (031) 5621570</p>
+         </div>
+      </footer>
+            <script src="script.js"></script>
+</body>
+</html>  
